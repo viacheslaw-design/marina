@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111c26">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="Марине Анатольевне Ваничкиной — с 60-летием. Лицейский свиток мудрости. 16 октября 2026 года.">
+<title>Марине Анатольевне — 60 прекрасных лет</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111c26'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%23d5b47a'/%3E%3Ctext x='31' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='%23efd8ac'%3E60%3C/text%3E%3C/svg%3E">
+<style>
+/* A single-file keepsake. All artwork, sound and animation are self-contained. */
+:root{
+ --night:#111c26;--night-deep:#0b141d;--wine:#6e2e40;--wine-deep:#4b2030;
+ --gold:#d5b47a;--gold-light:#efdbaf;--gold-dark:#947039;
+ --ivory:#f8f1e4;--paper:#f3ead6;--ink:#48372e;--muted:#89735b;
+ --serif:Georgia,"Palatino Linotype","Book Antiqua","Times New Roman",serif;
+ --sans:"Trebuchet MS",Arial,sans-serif;
+ --ease:cubic-bezier(.22,.68,0,1.01);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-color:#8b7049 var(--night);min-width:280px}
+body{margin:0;min-width:280px;background:var(--night);color:var(--ivory);font-family:var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button{font:inherit;cursor:pointer}
+button:disabled{cursor:default}
+a,button,input{outline-offset:5px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+[tabindex="-1"]:focus{outline:none}
+[hidden]{display:none!important}
+::selection{color:#fff5da;background:#86445a}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+svg{display:block}
+.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.skip{position:fixed;top:-100px;left:20px;z-index:100;padding:12px 18px;background:var(--paper);color:var(--ink);font:14px var(--sans)}
+.skip:focus{top:20px}
+.backdrop,.dawn,.grain,#ambient,#celebration{position:fixed;inset:0;pointer-events:none}
+.backdrop{z-index:-3;background:radial-gradient(ellipse at 49% 10%,#26333b 0,transparent 55%),radial-gradient(ellipse at 0 88%,#42222f 0,transparent 58%),radial-gradient(ellipse at 98% 65%,#242736 0,transparent 48%),linear-gradient(120deg,#17242e,#0d1721 65%,#161722)}
+.backdrop::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 109px,rgba(225,205,163,.021) 110px,transparent 111px 220px);mask-image:linear-gradient(90deg,#000,transparent 32%,transparent 68%,#000)}
+.backdrop::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(218,181,113,.055),transparent 58%);animation:breathe 12s ease-in-out infinite alternate}
+.dawn{z-index:-2;background:radial-gradient(ellipse at 50% 72%,#705041 0,#412f32 36%,rgba(25,30,39,.8) 72%,#18232c);opacity:0;transition:opacity 2.8s}
+body.at-finale .dawn{opacity:1}
+.grain{z-index:20;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath d='M0 0h160v160H0z' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E")}
+#ambient{z-index:0;width:100%;height:100%;opacity:.82}
+#celebration{z-index:35;width:100%;height:100%}
+.utility{position:fixed;z-index:50;right:max(24px,env(safe-area-inset-right));top:max(22px,env(safe-area-inset-top));display:flex;gap:8px;align-items:center}
+.tool{min-width:42px;min-height:42px;display:flex;align-items:center;justify-content:center;gap:9px;padding:10px 13px;border:1px solid rgba(216,186,132,.23);border-radius:28px;background:rgba(15,25,34,.88);color:#d8c6a5;backdrop-filter:blur(14px);font:11px/1.2 var(--sans);transition:background .25s,border-color .25s,color .25s}
+.tool:hover{background:#303337;border-color:var(--gold);color:var(--ivory)}
+.tool[aria-pressed="true"]{border-color:#ba965c;background:#34312e;color:var(--gold-light)}
+.tool.icon-only{width:42px;padding:10px}
+.tool .icon{width:18px;height:18px}
+.music-bars{height:16px;width:17px;display:none;align-items:center;gap:3px}
+.music-bars i{width:2px;background:currentColor;height:13px;transform-origin:50% 80%;animation:equalize 1.1s ease-in-out infinite alternate}
+.music-bars i:nth-child(2){animation-delay:-.55s;height:16px}
+.music-bars i:nth-child(3){animation-delay:-.2s;height:9px}
+#musicButton[aria-pressed="true"] .music-bars{display:flex}
+#musicButton[aria-pressed="true"] .music-icon{display:none}
+.volume-wrap{display:none;align-items:center;gap:7px;padding:0 7px 0 5px;color:var(--gold)}
+.utility.music-on .volume-wrap{display:flex}
+.volume-wrap input{accent-color:var(--gold);width:64px;height:18px;margin:0;cursor:pointer}
+.volume-wrap .icon{width:14px;height:14px}
+#motionButton .play-symbol{display:none}
+body.calm #motionButton .pause-symbol{display:none}
+body.calm #motionButton .play-symbol{display:block}
+#fullscreenButton .compress{display:none}
+html.is-fullscreen #fullscreenButton .expand{display:none}
+html.is-fullscreen #fullscreenButton .compress{display:block}
+.brand{position:absolute;left:42px;top:34px;z-index:6;display:flex;gap:12px;align-items:center;color:#c0a67b}
+.brand-mark{font-size:15px;font-style:italic;border:1px solid rgba(205,174,121,.3);border-radius:50%;width:35px;height:35px;display:grid;place-items:center}
+.brand-caption{font:9px/1.7 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.read-progress{position:fixed;z-index:51;left:0;right:0;top:0;height:2px;background:rgba(198,164,109,.08);opacity:0;transition:opacity .5s}
+body.reading .read-progress{opacity:1}
+.read-progress span{height:100%;display:block;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,#9f7044,#efdaad);box-shadow:0 0 8px #d4ae6d}
+.intro{min-height:100vh;min-height:100svh;position:relative;display:grid;place-items:center;padding:115px 40px 66px;isolation:isolate;transition:opacity .65s,transform .8s}
+.intro.leaving{opacity:0;transform:translateY(-18px);pointer-events:none}
+.frame{position:absolute;inset:22px;pointer-events:none;border:1px solid rgba(211,176,114,.18)}
+.frame::after{content:"";position:absolute;inset:6px;border:1px solid rgba(211,176,114,.055)}
+.corner{position:absolute;width:79px;height:79px;color:#c4a369;opacity:.76}
+.corner.tl{left:-1px;top:-1px}.corner.tr{right:-1px;top:-1px;transform:rotate(90deg)}
+.corner.br{right:-1px;bottom:-1px;transform:rotate(180deg)}.corner.bl{left:-1px;bottom:-1px;transform:rotate(270deg)}
+.corner use{stroke-dasharray:290;stroke-dashoffset:290;animation:draw 2.6s .15s ease forwards}
+.invitation{position:relative;width:100%;max-width:1080px;text-align:center;z-index:2}
+.eyebrow{margin:0;font:10px/1.9 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:#c5ac83}
+.intro .eyebrow{animation:rise 1.5s .1s both}
+.crest{position:relative;width:230px;height:170px;margin:24px auto 18px;animation:rise 1.7s .25s both}
+.crest::before{content:"";position:absolute;inset:-35px;background:radial-gradient(ellipse,rgba(225,192,128,.09),transparent 70%);animation:breathe 6s ease-in-out infinite alternate}
+.crest-ring{position:absolute;inset:15px 45px;border:1px solid rgba(216,184,125,.47);border-radius:50%}
+.crest-ring::before{content:"";position:absolute;inset:5px;border:1px solid rgba(216,184,125,.19);border-radius:50%}
+.crest-ring::after{content:"✦";font-size:11px;position:absolute;left:50%;top:-8px;transform:translateX(-50%);padding:0 6px;color:#d9bd87;background:#233039}
+.crest-number{position:absolute;inset:0;padding:33px 4px 0 0;font:83px/1 var(--serif);letter-spacing:-.06em;background:linear-gradient(120deg,#ae8850 15%,#ffecc2 40%,#b79153 62%,#efd39c 85%);background-size:190% 100%;color:transparent;background-clip:text;-webkit-background-clip:text;animation:gold-flow 9s ease-in-out infinite}
+.crest-years{position:absolute;top:113px;left:0;right:0;font:9px/1.5 var(--sans);letter-spacing:.32em;color:#d0b88c}
+.laurel{position:absolute;left:5px;top:0;width:83px;height:170px;color:#c5a366;opacity:.76}
+.laurel.right{left:auto;right:5px;transform:scaleX(-1)}
+.intro-name{margin:0;line-height:1.13;font-weight:400;letter-spacing:-.043em;text-wrap:balance;animation:rise 1.6s .5s both}
+.intro-name span{display:block;font-size:clamp(29px,5.3vw,73px);font-weight:400}
+.intro-name em{display:block;margin-top:3px;font-size:clamp(43px,6.8vw,92px);font-weight:400;color:#e7c88e;letter-spacing:-.045em}
+.intro-subtitle{font-size:clamp(15px,1.5vw,18px);line-height:1.75;color:#c5c0b7;margin:24px auto 0;max-width:510px;animation:rise 1.5s .9s both}
+.flourish{width:173px;height:27px;margin:23px auto;color:#c2a064;opacity:.8}
+.intro .flourish{animation:rise 1.5s 1.05s both}
+.primary{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:25px;min-height:58px;padding:17px 30px;border:1px solid #dfc48e;border-radius:2px;background:linear-gradient(115deg,#bfa06b,#eddaaf 48%,#d1af73);color:#312821;font:12px/1.5 var(--sans);letter-spacing:.07em;text-decoration:none;box-shadow:0 12px 35px rgba(0,0,0,.17),inset 0 1px rgba(255,250,230,.5);overflow:hidden;transition:box-shadow .3s,transform .3s,filter .3s}
+.primary::before{content:"";position:absolute;inset:4px;border:1px solid rgba(83,61,31,.22);pointer-events:none}
+.primary::after{content:"";position:absolute;inset:-20% auto -20% -75%;width:45%;transform:skewX(-25deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transition:left .65s}
+.primary:hover{transform:translateY(-2px);box-shadow:0 15px 45px rgba(195,155,85,.22);filter:brightness(1.045)}
+.primary:hover::after{left:130%}
+.primary:active{transform:translateY(0)}
+.primary .icon{width:20px;height:20px}
+#openScroll{animation:rise 1.5s 1.2s both}
+.intro-note{margin:20px 0 0;font-size:12px;font-style:italic;line-height:1.7;color:#aaa79f;animation:rise 1.5s 1.5s both}
+.date-line{display:flex;align-items:center;justify-content:center;gap:17px;margin:29px 0 0;color:#c4aa82;font:10px/1.7 var(--sans);letter-spacing:.24em;animation:rise 1.6s 1.6s both}
+.date-line::before,.date-line::after{content:"";width:37px;height:1px;background:#766347}
+.intro-foot{position:absolute;bottom:42px;left:0;right:0;color:#8e9391;text-align:center;font:9px/1.8 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+main{position:relative;z-index:4}
+.reading-topline{text-align:center;padding:89px 24px 26px;color:#b6a489;font:10px/1.8 var(--sans);letter-spacing:.19em;text-transform:uppercase}
+.reading-topline span{margin:0 13px;color:#7c6850}
+.scroll-stage{padding:18px 55px 0}
+.scroll-shell{position:relative;width:min(880px,100%);margin:0 auto}
+.roller{position:relative;z-index:3;height:25px;width:calc(100% + 42px);margin-left:-21px;border-radius:20px;background:linear-gradient(180deg,#b18a54,#80572f 21%,#4a2f1b 55%,#634020 82%,#352111);box-shadow:inset 0 1px 2px #e1ba75,inset 0 -2px 4px #27180e,0 8px 20px #05080b80}
+.roller::before,.roller::after{content:"";position:absolute;top:-5px;width:23px;height:35px;border:1px solid #826131;border-radius:8px;background:linear-gradient(90deg,#705026,#efcc82 37%,#b08542 65%,#73501f);box-shadow:0 3px 10px #07080980,inset 0 0 0 2px #563a2640}
+.roller::before{left:-9px}.roller::after{right:-9px}
+.roller.top{margin-bottom:-9px}.roller.bottom{margin-top:-9px}
+.paper{position:relative;overflow:hidden;color:var(--ink);background:radial-gradient(ellipse at 0 0,rgba(173,131,64,.22),transparent 43%),radial-gradient(ellipse at 100% 50%,rgba(201,166,107,.10),transparent 34%),linear-gradient(90deg,#decba5 0,#ebdfc4 2%,#f7efdd 7%,#f5edda 50%,#f7efde 93%,#e8d8b7 99%,#d2b98c);box-shadow:0 24px 90px #05070b60,inset 0 0 65px #b9945414;transition:height 1.75s cubic-bezier(.3,.58,.08,1)}
+.paper::before{content:"";position:absolute;inset:0;z-index:0;opacity:.075;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath d='M0 0h150v150H0z' filter='url(%23p)'/%3E%3C/svg%3E")}
+.paper-content{position:relative;padding:65px 76px 57px}
+.paper-content::before{content:"";position:absolute;inset:25px 25px;border:1px solid #b6986140;pointer-events:none}
+.paper-content::after{content:"";position:absolute;inset:29px 29px;border:1px solid #b698611b;pointer-events:none}
+.paper-content>*{position:relative;z-index:1}
+.paper-corner{position:absolute!important;width:70px;height:70px;color:#b1945e;opacity:.65}
+.paper-corner.tl{top:24px;left:24px}.paper-corner.tr{top:24px;right:24px;transform:rotate(90deg)}
+.paper-corner.bl{bottom:24px;left:24px;transform:rotate(270deg)}.paper-corner.br{bottom:24px;right:24px;transform:rotate(180deg)}
+.paper .eyebrow{font-size:9px;color:#927249;letter-spacing:.23em}
+.paper-book{width:90px;height:67px;margin:29px auto 22px;color:#97784a}
+.dedication{text-align:center;scroll-margin-top:90px}
+.dedication h2{margin:0;font-size:clamp(29px,3.65vw,50px);font-weight:400;line-height:1.25;letter-spacing:-.045em;color:var(--wine-deep);text-wrap:balance}
+.dedication h2 span{display:block;font-size:.66em;font-style:italic;letter-spacing:-.025em;margin-bottom:8px;color:#806145}
+.dedication .flourish{color:#aa8851;opacity:.75;margin:25px auto}
+.epigraph{font-size:clamp(17px,2vw,22px);line-height:1.7;font-style:italic;color:#8a6749;margin:0 auto 34px;max-width:560px;text-wrap:balance}
+.body-copy{font-size:18px;line-height:1.92;text-align:left;color:#564438}
+.body-copy p{margin:0 0 19px}
+.body-copy p:last-child{margin-bottom:0}
+.drop-cap::first-letter{float:left;font-size:69px;line-height:.88;padding:10px 10px 0 0;color:var(--wine);font-style:normal}
+.body-copy strong{font-weight:400;color:var(--wine-deep)}
+.divider{position:relative;display:flex;align-items:center;gap:17px;margin:54px auto 44px;width:100%;max-width:440px;color:#a38553}
+.divider::before,.divider::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#b4976266)}
+.divider::after{transform:rotate(180deg)}
+.divider span{font-size:13px}
+.chapter{scroll-margin-top:96px}
+.chapter-head{text-align:center;margin-bottom:29px}
+.chapter-index{display:block;font:10px/1.8 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:#98774b;margin-bottom:13px}
+.chapter h3{font-size:clamp(26px,3.2vw,37px);font-weight:400;line-height:1.28;letter-spacing:-.035em;color:#633245;margin:0;text-wrap:balance}
+.chapter-intro{max-width:550px;margin:19px auto 0;font-size:17px;line-height:1.85;color:#75614f;text-align:center;text-wrap:balance}
+.virtues{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin:35px 0 29px}
+.virtue{text-align:center;position:relative}
+.virtue+.virtue::before{content:"";position:absolute;left:-13px;top:20px;bottom:15px;width:1px;background:linear-gradient(transparent,#b89b6755,transparent)}
+.virtue .icon{width:33px;height:33px;margin:0 auto 16px;color:#ac8854;stroke-width:1.15}
+.virtue h4{font-size:20px;font-weight:400;color:#713e45;margin:0 0 11px}
+.virtue p{font-size:15px;line-height:1.8;margin:0;color:#74604d}
+.quote-panel{border-top:1px solid #b3956550;border-bottom:1px solid #b3956550;position:relative;margin:37px 0 0;padding:29px 22px;background:linear-gradient(90deg,transparent,#b68e5920,transparent);text-align:center}
+.quote-panel::before{content:"“";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:45px;line-height:1;color:#a88a54;background:#f4ebd7;padding:0 13px}
+.quote-panel p{font-size:clamp(19px,2.25vw,24px);font-style:italic;line-height:1.7;color:#765043;margin:0;text-wrap:balance}
+.gratitude{list-style:none;margin:33px auto 0;padding:0;max-width:568px}
+.gratitude li{position:relative;padding:0 0 21px 33px;font-size:18px;line-height:1.75;color:#675040;border-left:1px solid #b2946148;margin-left:5px}
+.gratitude li:last-child{padding-bottom:0;border-color:transparent}
+.gratitude li::before{content:"";position:absolute;left:-5px;top:11px;width:9px;height:9px;border:1px solid #ac8953;background:#f5ebd7;transform:rotate(45deg)}
+.gratitude em{font-style:normal;color:#803c4e}
+.wishes-note{font:11px/1.8 var(--sans);color:#8a7359;letter-spacing:.015em;text-align:center;margin:20px 0 23px}
+.wishes-note .icon{width:14px;height:14px;display:inline-block;vertical-align:-3px;margin-right:5px}
+.wishes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.wish{position:relative;min-height:226px;border:1px solid #b99a645c;border-radius:3px;background:rgba(255,250,236,.34);padding:0;color:var(--ink);transition:background .5s,border-color .4s,box-shadow .4s,transform .4s;perspective:700px;isolation:isolate}
+.wish::after{content:"";position:absolute;inset:5px;border:1px solid #b99a6421;border-radius:1px;pointer-events:none}
+.wish:hover{border-color:#a47b44;transform:translateY(-3px);box-shadow:0 9px 22px #8a603614}
+.wish:focus-visible{outline-color:var(--wine)}
+.wish-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px 17px;transition:opacity .45s,transform .65s var(--ease);backface-visibility:hidden}
+.wish-seal{position:relative;display:grid;place-items:center;width:63px;height:63px;margin-bottom:18px;border-radius:50%;color:#dcb980;background:radial-gradient(circle at 35% 28%,#975669,#742e46 55%,#541e32);box-shadow:inset 0 0 0 4px #4e1c262e,inset 0 0 0 5px #e8c69a40,0 5px 11px #63323d20}
+.wish-seal::after{content:"";position:absolute;inset:8px;border:1px solid #dbb57550;border-radius:50%}
+.wish-seal .icon{width:25px;height:25px;stroke-width:1.25}
+.wish-title{display:block;font-size:18px;line-height:1.3;color:#73404b}
+.wish-hint{display:block;margin-top:12px;font:9px/1.5 var(--sans);letter-spacing:.16em;color:#987b52;text-transform:uppercase}
+.wish-back{opacity:0;transform:rotateY(-50deg) scale(.96);pointer-events:none}
+.wish-back .tiny-star{color:#a77d3e;font-size:17px;margin-bottom:10px}
+.wish-back strong{display:block;font-weight:400;font-size:17px;line-height:1.3;color:#74364b;margin:0 0 10px}
+.wish-back .wish-text{font-size:14px;line-height:1.75;color:#6b5441;display:block}
+.wish[aria-expanded="true"]{background:rgba(221,188,135,.16);border-color:#b49158}
+.wish[aria-expanded="true"] .wish-front{opacity:0;transform:rotateY(60deg) scale(.96);pointer-events:none}
+.wish[aria-expanded="true"] .wish-back{opacity:1;transform:none;pointer-events:auto}
+.wishes-bottom{margin-top:21px;text-align:center}
+.text-button{border:0;border-bottom:1px solid #98764b69;background:none;color:#8e6640;padding:5px 1px;font:12px/1.5 var(--sans);transition:color .25s,border-color .25s}
+.text-button:hover{color:#6e2e40;border-color:#6e2e40}
+.wish-count{margin:11px 0 0;font:10px/1.6 var(--sans);color:#947c61}
+.poem{margin:30px auto 0;text-align:center;font-size:clamp(16px,1.85vw,21px);font-style:italic;line-height:1.95;color:#73523f}
+.poem p{margin:0 0 22px}
+.poem p:last-child{margin-bottom:0}
+.signature{text-align:center;margin-top:39px}
+.signature p{font-size:17px;line-height:1.75;color:#7d654e;margin:0}
+.wax-seal{position:relative;width:112px;height:112px;margin:24px auto 22px;border-radius:49% 51% 47% 53% / 53% 48% 52% 47%;background:radial-gradient(circle at 35% 28%,#995568,#77364b 44%,#5c2439 90%);box-shadow:inset 1px 2px 5px #cfae7960,inset -2px -3px 8px #34162380,0 6px 10px #48202b35;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#dfbd88;transform:rotate(-9deg)}
+.wax-seal::before{content:"";position:absolute;inset:8px;border:1px solid #d6b58a75;border-radius:50%;box-shadow:inset 0 0 0 3px #461b2825}
+.wax-seal::after{content:"";position:absolute;inset:13px;border:1px dotted #d6b58a6b;border-radius:50%}
+.wax-seal small{font:7px/1.4 var(--sans);letter-spacing:.19em;z-index:1}
+.wax-seal b{font:42px/1.15 var(--serif);letter-spacing:-.04em;z-index:1}
+.signature .signature-date{font:9px/1.8 var(--sans);text-transform:uppercase;letter-spacing:.2em;color:#9c805b}
+.paper-end{margin-top:38px;padding-top:28px;border-top:1px solid #b89b6440;text-align:center}
+.paper-end p{margin:0 0 22px;font:italic 21px/1.6 var(--serif);color:#866146;text-wrap:balance}
+.paper-end .primary{font-size:11px;min-height:52px;box-shadow:0 7px 22px #8a603618}
+.chapter-nav{position:fixed;left:27px;top:50%;transform:translateY(-50%);z-index:15;display:flex;flex-direction:column;gap:8px;opacity:0;pointer-events:none;transition:opacity .5s}
+body.reading .chapter-nav{opacity:1;pointer-events:auto}
+.chapter-nav a{width:28px;height:31px;display:flex;align-items:center;justify-content:center;text-decoration:none;position:relative;color:#d4bc92}
+.chapter-nav a::before{content:"";width:5px;height:5px;border:1px solid #c7a36c80;transform:rotate(45deg);transition:background .4s,box-shadow .4s,transform .4s}
+.chapter-nav a[aria-current="location"]::before{background:var(--gold);box-shadow:0 0 10px #d4a45870;transform:rotate(45deg) scale(1.2)}
+.chapter-nav a span{position:absolute;left:33px;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(-5px);font:10px var(--sans);padding:8px 12px;border:1px solid #b7955430;border-radius:2px;background:#17232af2;transition:opacity .3s,transform .3s}
+.chapter-nav a:hover span,.chapter-nav a:focus-visible span{opacity:1;transform:none}
+.finale{position:relative;min-height:780px;min-height:95svh;display:grid;place-items:center;padding:110px 32px 100px;text-align:center;overflow:hidden;scroll-margin-top:0}
+.finale-inner{position:relative;z-index:2;width:100%;max-width:900px}
+.finale-halo{position:absolute;width:min(660px,90vw);height:min(660px,90vw);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid #d9b97716;box-shadow:0 0 130px #d6b06c07,inset 0 0 120px #d6b06c07;pointer-events:none}
+.finale-halo::before,.finale-halo::after{content:"";position:absolute;inset:19px;border:1px solid #d9b9770b;border-radius:50%}
+.finale-halo::after{inset:-21px;border-style:dashed;animation:orbit 150s linear infinite}
+.finale .eyebrow{color:#d2b388}
+.finale-number{font:clamp(110px,17vw,200px)/.95 var(--serif);letter-spacing:-.09em;padding-right:.09em;margin:19px 0 25px;background:linear-gradient(135deg,#997344 10%,#f7deb0 38%,#c99a5e 66%,#f4d8a0);background-size:180% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gold-flow 10s ease-in-out infinite;filter:drop-shadow(0 7px 20px #070b0c30)}
+.finale h2{font:400 clamp(35px,4.8vw,63px)/1.19 var(--serif);letter-spacing:-.04em;margin:0;color:#f2e7d6;text-wrap:balance}
+.finale h2 em{display:block;font-size:.78em;font-weight:400;color:#e9c990;margin-top:7px}
+.finale-message{font-size:clamp(17px,2vw,22px);line-height:1.7;font-style:italic;color:#d7c3aa;margin:27px auto 0;max-width:600px;text-wrap:balance}
+.finale-message strong{font-weight:400;color:#f0d6a4}
+.finale .flourish{margin:27px auto}
+.finale-bottom{font:12px/1.7 var(--sans);color:#bca98e;margin:0 0 26px}
+.finale-actions{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+.secondary{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:54px;padding:14px 23px;border:1px solid #d4b78366;background:#18222b30;color:#dac7a5;font:11px/1.6 var(--sans);letter-spacing:.035em;border-radius:2px;transition:border-color .3s,background .3s}
+.secondary:hover{border-color:#cfab6f;background:#dac49a0e}
+.secondary .icon{width:17px;height:17px}
+.finale-actions .primary{min-height:54px;font-size:11px;gap:12px;padding:14px 23px}
+.footer-note{position:relative;z-index:5;padding:0 25px 30px;text-align:center;color:#a59279;font:9px/1.8 var(--sans);letter-spacing:.19em;text-transform:uppercase}
+.toast{position:fixed;bottom:max(28px,env(safe-area-inset-bottom));left:50%;z-index:60;max-width:min(470px,calc(100vw - 32px));padding:15px 25px;border:1px solid #d2b77c55;border-radius:3px;background:#17212bef;color:#ebd5ad;box-shadow:0 8px 35px #0005;font:italic 16px/1.6 var(--serif);text-align:center;opacity:0;transform:translate(-50%,14px);pointer-events:none;transition:opacity .45s,transform .45s;backdrop-filter:blur(15px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+body.enhanced .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1.1s var(--ease)}
+body.enhanced .reveal.visible{opacity:1;transform:none}
+body.calm *,body.calm *::before,body.calm *::after{animation-play-state:paused!important;scroll-behavior:auto!important}
+body.calm .reveal{opacity:1!important;transform:none!important}
+body.calm .wish-face,body.calm .intro,body.calm .paper,body.calm .dawn{transition:none!important}
+body.calm .intro .eyebrow,body.calm .crest,body.calm .intro-name,body.calm .intro-subtitle,body.calm .intro .flourish,body.calm #openScroll,body.calm .intro-note,body.calm .date-line{opacity:1!important;transform:none!important}
+body.calm .corner use{stroke-dashoffset:0!important}
+@keyframes rise{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes breathe{to{opacity:.45;transform:scale(1.045)}}
+@keyframes gold-flow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes equalize{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@media(min-width:1500px){.intro{padding-top:125px;padding-bottom:90px}.crest{margin-top:31px;margin-bottom:25px}.intro-subtitle{margin-top:28px}}
+@media(max-width:1100px){.chapter-nav{left:10px}.chapter-nav a{width:20px}.brand-caption{display:none}.paper-content{padding-left:64px;padding-right:64px}}
+@media(max-width:760px){
+ .utility{top:max(15px,env(safe-area-inset-top));right:18px;gap:6px}
+ .brand{left:26px;top:19px}.brand-mark{width:34px;height:34px;font-size:14px}
+ .intro{padding:96px 30px 80px}.frame{inset:14px}.corner{width:60px;height:60px}
+ .crest{width:211px;height:157px;margin:25px auto 22px}.crest-ring{inset:13px 42px}.crest-number{font-size:75px;padding-top:30px}.crest-years{top:103px}.laurel{width:75px;height:157px}
+ .intro-foot{bottom:35px;font-size:8px;letter-spacing:.13em}
+ .intro-subtitle{max-width:390px;margin-top:23px}.eyebrow{font-size:9px;letter-spacing:.2em}
+ .intro-note{font-size:12px}.date-line{font-size:9px;letter-spacing:.18em}
+ .reading-topline{padding-top:83px;font-size:8px;letter-spacing:.15em}.reading-topline span{margin:0 8px}
+ .scroll-stage{padding:12px 30px 0}.roller{height:21px;width:calc(100% + 26px);margin-left:-13px}
+ .roller::before,.roller::after{width:18px;height:31px;top:-5px}.roller::before{left:-5px}.roller::after{right:-5px}
+ .paper-content{padding:49px 37px 41px}.paper-content::before{inset:17px}.paper-content::after{inset:21px}
+ .paper-corner{width:48px;height:48px}.paper-corner.tl{top:16px;left:16px}.paper-corner.tr{top:16px;right:16px}.paper-corner.bl{bottom:16px;left:16px}.paper-corner.br{bottom:16px;right:16px}
+ .paper-book{width:75px;height:55px;margin:22px auto 23px}
+ .body-copy{font-size:17px;line-height:1.9}.drop-cap::first-letter{font-size:61px}
+ .virtues{gap:17px}.virtue h4{font-size:18px}.virtue p{font-size:14px}.virtue+.virtue::before{left:-9px}
+ .wishes-grid{grid-template-columns:repeat(2,1fr);gap:10px}.wish{min-height:218px}
+ .wish-back .wish-text{font-size:14px}.wish-title{font-size:17px}
+ .chapter-nav{display:none}.divider{margin:44px auto 36px}.chapter-intro{font-size:16px}
+ .gratitude li{font-size:17px;padding-left:26px}
+ .poem{font-size:18px}.finale{padding-top:96px;padding-bottom:90px;min-height:790px;min-height:95svh}
+ .finale-halo{width:85vw;height:85vw}
+}
+@media(max-width:480px){
+ .utility{right:17px}.tool{min-height:38px;min-width:38px;padding:9px 11px;font-size:10px;gap:7px}
+ .tool.icon-only{width:38px;padding:9px}.tool .icon{width:16px;height:16px}
+ .volume-wrap{position:absolute;right:90px;top:48px;padding:9px 12px!important;border-radius:22px;background:#17232af5;border:1px solid #b7975c40}
+ .volume-wrap input{width:70px}
+ .intro{padding:94px 28px 74px}.brand{left:25px;top:18px}.brand-mark{width:34px;height:34px}
+ .crest{margin-top:22px;margin-bottom:18px;width:193px;height:145px}.crest-ring{inset:12px 39px}.crest-number{font-size:69px;padding-top:28px}.crest-years{font-size:8px;top:95px}.laurel{width:68px;height:145px}
+ .intro-name span{font-size:clamp(25px,7.4vw,34px)}.intro-name em{font-size:clamp(36px,10.7vw,48px);margin-top:7px}
+ .intro-subtitle{font-size:15px;line-height:1.75;margin-top:22px;max-width:320px}
+ .intro .flourish{margin:20px auto;width:145px}
+ .primary{padding:16px 23px;font-size:11px;gap:17px;min-height:56px}
+ .date-line{margin-top:24px;font-size:8px;gap:13px}.intro-note{margin-top:16px;font-size:11px}
+ .intro-foot{font-size:7px;bottom:30px}
+ .reading-topline{font-size:7px;letter-spacing:.14em;padding:79px 15px 23px}
+ .scroll-stage{padding-left:18px;padding-right:18px}.roller{width:calc(100% + 10px);margin-left:-5px}.roller::before,.roller::after{width:15px}
+ .paper-content{padding:44px 25px 37px}.paper-content::before{inset:12px}.paper-content::after{inset:16px}
+ .paper-corner{width:38px;height:38px}.paper-corner.tl{left:11px;top:11px}.paper-corner.tr{right:11px;top:11px}.paper-corner.bl{left:11px;bottom:11px}.paper-corner.br{right:11px;bottom:11px}
+ .paper .eyebrow{font-size:7px;letter-spacing:.14em}
+ .dedication h2{font-size:29px;line-height:1.32}.dedication h2 span{font-size:.74em}
+ .epigraph{font-size:17px;line-height:1.8;margin-bottom:26px}.epigraph br{display:none}
+ .body-copy{font-size:16px;line-height:1.9}.body-copy p{margin-bottom:17px}
+ .chapter h3{font-size:27px}.chapter-index{font-size:8px;letter-spacing:.19em}
+ .virtues{grid-template-columns:1fr;gap:23px;margin-top:27px}.virtue{display:grid;grid-template-columns:39px 1fr;text-align:left;column-gap:13px}
+ .virtue .icon{grid-row:1/3;width:29px;height:29px;margin:2px 0 0}.virtue h4{font-size:19px;margin-bottom:6px}.virtue p{font-size:15px;line-height:1.75}.virtue+.virtue::before{display:none}
+ .quote-panel{margin-top:29px;padding:24px 10px}.quote-panel p{font-size:19px}
+ .gratitude li{font-size:16px;line-height:1.8;padding-bottom:18px;padding-left:22px}
+ .wishes-note{font-size:10px;margin-top:18px}.wishes-grid{gap:9px}.wish{min-height:236px}
+ .wish-face{padding:17px 12px}.wish-back .wish-text{font-size:13px;line-height:1.75}.wish-back strong{font-size:16px;margin-bottom:9px}.wish-back .tiny-star{margin-bottom:8px}
+ .wish-title{font-size:17px}.wish-seal{width:57px;height:57px}.wish-hint{font-size:8px}
+ .poem{font-size:clamp(13px,3.95vw,17px);line-height:2}.signature p{font-size:16px}.paper-end p{font-size:19px}
+ .paper-end .primary{font-size:10px;padding:14px 21px}
+ .finale{padding:89px 27px 76px;min-height:760px;min-height:100svh}
+ .finale h2{font-size:37px}.finale h2 em{font-size:.78em}.finale-message{font-size:18px}
+ .finale-number{font-size:130px;margin-top:23px;margin-bottom:27px}
+ .finale-actions{flex-direction:column;gap:12px}.finale-actions button{width:248px;max-width:100%}
+ .finale-bottom{font-size:11px}.footer-note{font-size:7px;letter-spacing:.15em}
+ .toast{font-size:14px;padding:13px 17px;min-width:240px}
+}
+@media(max-width:340px){
+ .brand{display:none}.intro{padding-left:24px;padding-right:24px}.intro .eyebrow{font-size:8px}
+ .wishes-grid{grid-template-columns:1fr}.wish{min-height:207px}.wish-face{padding:19px 25px}.wish-back .wish-text{font-size:15px}
+ .poem{font-size:12px}.paper-content{padding-left:23px;padding-right:23px}.dedication h2{font-size:25px}
+}
+@media(max-height:780px) and (min-width:761px){
+ .intro{padding-top:88px;padding-bottom:65px}.crest{width:202px;height:147px;margin:15px auto 12px}.crest-ring{inset:12px 39px}.crest-number{font-size:71px;padding-top:29px}.crest-years{top:97px}.laurel{height:147px;width:73px}.intro-name span{font-size:58px}.intro-name em{font-size:74px}.intro-subtitle{margin-top:17px;font-size:16px}.intro .flourish{margin:15px auto}.intro-note{margin-top:15px}.date-line{margin-top:21px}.intro-foot{bottom:34px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ body:not(.motion-enabled) *,body:not(.motion-enabled) *::before,body:not(.motion-enabled) *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .corner use{stroke-dashoffset:0}
+}
+
+
+/* Both card faces share one grid cell, so the longest text reserves its space
+   before opening. This also remains safe with larger accessibility fonts. */
+.wish{display:grid;grid-template-columns:minmax(0,1fr)}
+.wish-face{position:relative;inset:auto;grid-area:1/1;min-width:0}
+
+/* Clear separation between the ornamental frame and the controls. */
+.brand{left:112px}
+@media(max-width:1100px){.brand{left:100px}}
+@media(max-width:760px){
+ .brand{left:83px;top:20px}
+ body.reading .utility::before{content:"";position:fixed;z-index:-1;left:0;right:0;top:0;height:74px;background:linear-gradient(180deg,rgba(15,25,34,.98),rgba(15,25,34,.94) 65%,rgba(15,25,34,0));pointer-events:none}
+ body.reading .utility::after{content:"С ЮБИЛЕЕМ";position:fixed;left:24px;top:29px;color:#bea47b;font:8px/1.5 var(--sans);letter-spacing:.15em;pointer-events:none}
+ body.reading .brand{display:none}
+}
+@media(max-width:480px){.brand{left:77px;top:20px}}
+@media(max-width:340px){.brand{display:none}}
+
+@media print{
+ @page{margin:16mm}
+ body{background:white;color:#332a24}
+ .intro,.utility,.brand,.read-progress,.chapter-nav,.backdrop,.dawn,.grain,canvas,.reading-topline,.roller,.paper-corner,.wishes-note,.wishes-bottom,.paper-end,.finale-actions,.toast,.skip,.footer-note{display:none!important}
+ main[hidden]{display:block!important}
+ .scroll-stage{padding:0}.scroll-shell{width:100%}
+ .paper{height:auto!important;overflow:visible;box-shadow:none;background:white}
+ .paper-content{padding:0}.paper-content::before,.paper-content::after,.paper::before{display:none}
+ .reveal{opacity:1!important;transform:none!important}.dedication{page-break-after:avoid}
+ .body-copy{font-size:12pt;line-height:1.65}.chapter h3{font-size:23pt}
+ .divider{margin:25px auto}.virtues{gap:20px}.virtue p{font-size:10pt}
+ .wish{min-height:150px;break-inside:avoid}.wish-front{display:none}.wish-back{position:static;opacity:1!important;transform:none!important;padding:15px}.wish-back .wish-text{font-size:10pt}
+ .wish-back[aria-hidden="true"]{visibility:visible}
+ .wishes-grid{grid-template-columns:repeat(3,1fr)}
+ .poem{font-size:13pt}.signature{break-inside:avoid}
+ .finale{min-height:0;padding:35px 0 0;break-inside:avoid}.finale-halo,.finale-number,.finale .eyebrow,.finale .flourish,.finale-bottom{display:none}
+ .finale h2,.finale h2 em,.finale-message,.finale-message strong{color:#603649}.finale h2{font-size:27pt}.finale-message{font-size:14pt}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#dedication" id="skipLink">Перейти к поздравлению</a>
+<svg class="defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+ <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 17V5l11-2v12M9 9l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="16" rx="3" ry="2.5"/></symbol>
+ <symbol id="i-volume" viewBox="0 0 24 24"><path d="m10 5-5 4H2v6h3l5 4zM14 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+ <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 .8 7M4 4v6h6"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.9a5.5 5.5 0 0 0-7.8 0L12 6l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.3a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+ <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20C2 14 5 5 21 3c0 11-4 18-13 16M3 22 17 8M9 16v-5m0 5h6"/></symbol>
+ <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1m0-15.6-2.1 2.1M6.3 17.7l-2.1 2.1"/></symbol>
+ <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 2.8 6.5L22 9l-5.5 4.8 1.7 7.2-6.2-3.7L5.8 21l1.7-7.2L2 9l7.2-.5Z"/></symbol>
+ <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6C9 3 5 3 2 4v15c4-1 7 0 10 2 3-2 6-3 10-2V4c-3-1-7-1-10 2Zm0 0v15M5 8c1.5-.2 3 .3 4 1M5 12c1.5-.2 3 .3 4 1m6-4c1-.7 2.5-1.2 4-1m-4 5c1-.7 2.5-1.2 4-1"/></symbol>
+ <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4ZM20 1v4m-2-2h4M3 18v4m-2-2h4"/></symbol>
+ <symbol id="i-feather" viewBox="0 0 24 24"><path d="M3 22 17 7M6 18C3 12 9 3 22 2c-1 12-9 19-16 16Zm4-5 7 1m-3-5 5 1"/></symbol>
+ <symbol id="i-touch" viewBox="0 0 24 24"><path d="M9 12V6a2 2 0 0 1 4 0v6l2-2 5 2v6l-4 4h-5l-7-8a2 2 0 0 1 3-2l2 2M5 5a6 6 0 0 1 12 0"/></symbol>
+ <symbol id="corner" viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width=".8"><path d="M0 80V0h80M6 62V6h56M0 33c17 0 29-8 32-33M0 53c22-5 43-22 53-53M12 39c0-14 14-27 27-27-1 14-13 27-27 27Z"/><path d="M16 29c6-1 11-7 13-13M5 49l6-9m29-29 9-6M2 70h8M70 2v8"/><circle cx="6" cy="6" r="2.2"/><path d="m53 8 3-3 3 3-3 3ZM8 53l3 3-3 3-3-3Z"/></g></symbol>
+ <symbol id="flourish" viewBox="0 0 180 28"><g fill="none" stroke="currentColor" stroke-width=".8"><path d="M0 14h49c13 0 22-12 34-8m97 8h-49c-13 0-22-12-34-8M31 14c15 0 26 10 39 5m79-5c-15 0-26 10-39 5"/><path d="m90 3 8 11-8 11-8-11Z"/><circle cx="90" cy="14" r="2"/><path d="M67 14h9m28 0h9"/></g></symbol>
+ <symbol id="laurel" viewBox="0 0 85 174"><g fill="currentColor"><path d="M73 166C33 145 16 113 19 73 21 42 33 22 49 9" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M55 155c-21 1-35-7-36-18 14-2 28 7 36 18ZM43 144c-5-22-4-35 4-41 9 11 5 28-4 41ZM32 128C12 122 4 113 6 102c13 3 23 13 26 26ZM25 108c-1-24 5-36 14-40 5 14-2 29-14 40ZM20 91C5 83 1 72 5 63c11 4 15 16 15 28ZM21 72c5-24 12-34 22-34 0 15-9 25-22 34ZM27 50C17 39 18 28 24 21c7 7 8 19 3 29ZM35 32c8-21 18-29 29-27-4 13-14 22-29 27Z" opacity=".87"/></g></symbol>
+ <symbol id="book-quill" viewBox="0 0 110 80"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M55 41C43 32 23 31 10 35v32c19-3 32-1 45 8 13-9 26-11 45-8V35c-10-3-18-2-25-1M55 43v32M7 40H3v32c23-3 38 0 52 7 14-7 29-10 52-7V40h-4M18 43c9-1 19 1 28 5m-28 3c9-1 19 1 28 5m-28 3c9-1 19 1 28 5m18-2c8-4 16-5 26-5M58 54 93 8M68 41C64 21 82 5 105 2c-1 23-16 44-37 39ZM76 30l13 1m-7-10 13 1"/></g></symbol>
+</defs>
+</svg>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="dawn" aria-hidden="true"></div>
+<canvas id="ambient" aria-hidden="true"></canvas>
+<canvas id="celebration" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="read-progress" aria-hidden="true"><span id="progressFill"></span></div>
+<div class="brand" aria-hidden="true"><span class="brand-mark">М</span><span class="brand-caption">Свиток<br>добрых слов</span></div>
+
+<div class="utility" role="group" aria-label="Настройки поздравления">
+ <div class="volume-wrap">
+  <svg class="icon" aria-hidden="true"><use href="#i-volume"/></svg>
+  <label class="sr-only" for="volume">Громкость музыки</label>
+  <input id="volume" type="range" min="0" max="100" value="38" aria-label="Громкость музыки">
+ </div>
+ <button class="tool" id="musicButton" type="button" aria-label="Включить музыку" aria-pressed="false" title="Включить нежную мелодию">
+  <svg class="icon music-icon" aria-hidden="true"><use href="#i-music"/></svg>
+  <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+  <span id="musicLabel">Музыка</span>
+ </button>
+ <button class="tool icon-only" id="motionButton" type="button" aria-label="Приостановить анимацию" aria-pressed="false" title="Приостановить анимацию">
+  <svg class="icon pause-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+  <svg class="icon play-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg>
+ </button>
+ <button class="tool icon-only" id="fullscreenButton" type="button" aria-label="Открыть на весь экран" aria-pressed="false" title="На весь экран">
+  <svg class="icon expand" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>
+  <svg class="icon compress" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h5V3m13 5h-5V3M8 21v-5H3m13 5v-5h5"/></svg>
+ </button>
+</div>
+
+<section class="intro" id="intro" aria-labelledby="introName">
+ <div class="frame" aria-hidden="true">
+  <svg class="corner tl"><use href="#corner"/></svg><svg class="corner tr"><use href="#corner"/></svg>
+  <svg class="corner bl"><use href="#corner"/></svg><svg class="corner br"><use href="#corner"/></svg>
+ </div>
+ <div class="invitation">
+  <p class="eyebrow">Лицейский свиток мудрости</p>
+  <div class="crest" role="img" aria-label="60 прекрасных лет">
+   <span class="crest-ring"></span>
+   <svg class="laurel" aria-hidden="true"><use href="#laurel"/></svg>
+   <svg class="laurel right" aria-hidden="true"><use href="#laurel"/></svg>
+   <span class="crest-number" aria-hidden="true">60</span><span class="crest-years" aria-hidden="true">ПРЕКРАСНЫХ ЛЕТ</span>
+  </div>
+  <h1 class="intro-name" id="introName"><span>Марине Анатольевне</span><em>Ваничкиной</em></h1>
+  <p class="intro-subtitle">С благодарностью за мудрость, вдохновение<br>и свет, который Вы дарите людям.</p>
+  <svg class="flourish" aria-hidden="true"><use href="#flourish"/></svg>
+  <button class="primary" id="openScroll" type="button">Развернуть поздравление <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+  <p class="intro-note">Несколько тёплых слов, которые хочется сохранить.</p>
+  <p class="date-line"><time datetime="2026-10-16">16 ОКТЯБРЯ 2026</time></p>
+ </div>
+ <p class="intro-foot">С любовью к прекрасному · С уважением к Вам</p>
+</section>
+
+<nav class="chapter-nav" id="chapterNav" aria-label="Главы поздравления" hidden>
+ <a href="#dedication" aria-label="Посвящение" aria-current="location"><span>Посвящение</span></a>
+ <a href="#calling" aria-label="Ваше призвание"><span>Ваше призвание</span></a>
+ <a href="#gratitude" aria-label="Благодарность"><span>Благодарность</span></a>
+ <a href="#wishes" aria-label="Шесть пожеланий"><span>Шесть пожеланий</span></a>
+ <a href="#poetry" aria-label="Тёплые строки"><span>Тёплые строки</span></a>
+ <a href="#finale" aria-label="С юбилеем"><span>С юбилеем!</span></a>
+</nav>
+
+<main id="greeting">
+ <p class="reading-topline">Марине Анатольевне Ваничкиной <span>✦</span> С юбилеем</p>
+ <div class="scroll-stage">
+  <div class="scroll-shell">
+   <div class="roller top" aria-hidden="true"></div>
+   <article class="paper" id="paper" aria-label="Лицейский свиток мудрости">
+    <div class="paper-content" id="paperContent">
+     <svg class="paper-corner tl" aria-hidden="true"><use href="#corner"/></svg><svg class="paper-corner tr" aria-hidden="true"><use href="#corner"/></svg>
+     <svg class="paper-corner bl" aria-hidden="true"><use href="#corner"/></svg><svg class="paper-corner br" aria-hidden="true"><use href="#corner"/></svg>
+
+     <header class="dedication reveal" id="dedication">
+      <p class="eyebrow">Особый день · Особенные слова</p>
+      <svg class="paper-book" aria-hidden="true"><use href="#book-quill"/></svg>
+      <h2 id="greetingTitle" tabindex="-1"><span>Дорогая</span>Марина Анатольевна!</h2>
+      <svg class="flourish" aria-hidden="true"><use href="#flourish"/></svg>
+      <p class="epigraph">Есть люди, чья мудрость становится опорой,<br>а доброта — частью нашей жизни.</p>
+      <div class="body-copy">
+       <p class="drop-cap">В Ваш юбилей хочется говорить не столько о годах, сколько о том, что невозможно измерить календарём: о мудрости, которой Вы делитесь, о сердечности, которую чувствуешь сразу, и о добром следе, который Вы оставляете в жизни людей.</p>
+       <p>Шестьдесят лет — это <strong>прекрасная зрелость души</strong>, богатство опыта и особая свобода: беречь главное, радоваться настоящему и с любопытством смотреть вперёд. Пусть в этой новой главе будет больше времени для себя, больше счастливых встреч и больше поводов сказать: «Как же хорошо!»</p>
+      </div>
+     </header>
+
+     <div class="divider" aria-hidden="true"><span>✦</span></div>
+     <section class="chapter reveal" id="calling" aria-labelledby="callingTitle">
+      <div class="chapter-head">
+       <span class="chapter-index">Глава I · Ваше призвание</span>
+       <h3 id="callingTitle">Не просто передавать знания.<br>Зажигать интерес к жизни.</h3>
+       <p class="chapter-intro">В лицейской жизни особенно ценны люди, рядом с которыми хочется узнавать, думать и становиться лучше.</p>
+      </div>
+      <div class="virtues">
+       <div class="virtue"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><h4>Мудрость</h4><p>Не только знать ответы, но и помогать другим находить свой путь.</p></div>
+       <div class="virtue"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><h4>Доброта</h4><p>Видеть человека за любой задачей и находить для него нужные слова.</p></div>
+       <div class="virtue"><svg class="icon" aria-hidden="true"><use href="#i-feather"/></svg><h4>Вдохновение</h4><p>Пробуждать интерес, поддерживать смелость и открывать новые горизонты.</p></div>
+      </div>
+      <blockquote class="quote-panel"><p>Самый важный след — не на бумаге.<br>Он в сердцах тех, кому Вы помогли<br>поверить в себя.</p></blockquote>
+     </section>
+
+     <div class="divider" aria-hidden="true"><span>✦</span></div>
+     <section class="chapter reveal" id="gratitude" aria-labelledby="gratitudeTitle">
+      <div class="chapter-head">
+       <span class="chapter-index">Глава II · От всего сердца</span>
+       <h3 id="gratitudeTitle">Так много поводов<br>сказать Вам «спасибо».</h3>
+      </div>
+      <ul class="gratitude">
+       <li><em>За знания,</em> которые становятся надёжной опорой.</li>
+       <li><em>За терпение,</em> которое даёт смелость попробовать ещё раз.</li>
+       <li><em>За тепло,</em> которое помнится дольше любых слов.</li>
+       <li><em>За внутреннюю культуру,</em> которая воспитывает без громких наставлений.</li>
+       <li><em>За умение оставаться собой —</em> чуткой, сильной и настоящей.</li>
+      </ul>
+     </section>
+
+     <div class="divider" aria-hidden="true"><span>✦</span></div>
+     <section class="chapter reveal" id="wishes" aria-labelledby="wishesTitle">
+      <div class="chapter-head">
+       <span class="chapter-index">Глава III · Пусть сбудется</span>
+       <h3 id="wishesTitle">Шесть добрых пожеланий.<br>На много счастливых лет.</h3>
+      </div>
+      <p class="wishes-note"><svg class="icon" aria-hidden="true"><use href="#i-touch"/></svg>Коснитесь каждой печати — внутри пожелание.</p>
+      <div class="wishes-grid">
+       <button class="wish" type="button" aria-expanded="false" aria-label="Открыть пожелание здоровья" aria-controls="wishText1" data-name="здоровья">
+        <span class="wish-face wish-front"><span class="wish-seal"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></span><span class="wish-title">Здоровья</span><span class="wish-hint">Открыть печать</span></span>
+        <span class="wish-face wish-back" id="wishText1" aria-hidden="true"><span class="tiny-star" aria-hidden="true">✧</span><strong>Здоровья</strong><span class="wish-text">Пусть хватает сил на всё любимое, а каждый новый день начинается с лёгкости и хорошего самочувствия.</span></span>
+       </button>
+       <button class="wish" type="button" aria-expanded="false" aria-label="Открыть пожелание любви" aria-controls="wishText2" data-name="любви">
+        <span class="wish-face wish-front"><span class="wish-seal"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span><span class="wish-title">Любви</span><span class="wish-hint">Открыть печать</span></span>
+        <span class="wish-face wish-back" id="wishText2" aria-hidden="true"><span class="tiny-star" aria-hidden="true">✧</span><strong>Любви</strong><span class="wish-text">Пусть рядом будут те, с кем можно быть собой, смеяться от души и чувствовать себя по-настоящему любимой.</span></span>
+       </button>
+       <button class="wish" type="button" aria-expanded="false" aria-label="Открыть пожелание радости" aria-controls="wishText3" data-name="радости">
+        <span class="wish-face wish-front"><span class="wish-seal"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></span><span class="wish-title">Радости</span><span class="wish-hint">Открыть печать</span></span>
+        <span class="wish-face wish-back" id="wishText3" aria-hidden="true"><span class="tiny-star" aria-hidden="true">✧</span><strong>Радости</strong><span class="wish-text">Пусть жизнь радует добрыми встречами, неожиданными подарками и маленькими счастливыми случайностями.</span></span>
+       </button>
+       <button class="wish" type="button" aria-expanded="false" aria-label="Открыть пожелание вдохновения" aria-controls="wishText4" data-name="вдохновения">
+        <span class="wish-face wish-front"><span class="wish-seal"><svg class="icon" aria-hidden="true"><use href="#i-feather"/></svg></span><span class="wish-title">Вдохновения</span><span class="wish-hint">Открыть печать</span></span>
+        <span class="wish-face wish-back" id="wishText4" aria-hidden="true"><span class="tiny-star" aria-hidden="true">✧</span><strong>Вдохновения</strong><span class="wish-text">Пусть не иссякают любопытство, свежие идеи и удовольствие от того, что Вы любите.</span></span>
+       </button>
+       <button class="wish" type="button" aria-expanded="false" aria-label="Открыть пожелание времени для себя" aria-controls="wishText5" data-name="времени для себя">
+        <span class="wish-face wish-front"><span class="wish-seal"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span><span class="wish-title">Времени<br>для себя</span><span class="wish-hint">Открыть печать</span></span>
+        <span class="wish-face wish-back" id="wishText5" aria-hidden="true"><span class="tiny-star" aria-hidden="true">✧</span><strong>Времени для себя</strong><span class="wish-text">На любимые книги, неспешные прогулки, путешествия и желания, которые больше не нужно откладывать «на потом».</span></span>
+       </button>
+       <button class="wish" type="button" aria-expanded="false" aria-label="Открыть пожелание исполнения желаний" aria-controls="wishText6" data-name="исполнения желаний">
+        <span class="wish-face wish-front"><span class="wish-seal"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="wish-title">Исполнения<br>желаний</span><span class="wish-hint">Открыть печать</span></span>
+        <span class="wish-face wish-back" id="wishText6" aria-hidden="true"><span class="tiny-star" aria-hidden="true">✧</span><strong>Исполнения желаний</strong><span class="wish-text">Пусть впереди будет то, чего Вы ждёте с особенным трепетом. И пусть жизнь приятно удивляет!</span></span>
+       </button>
+      </div>
+      <div class="wishes-bottom"><button class="text-button" id="allWishes" type="button">Открыть все пожелания</button><p class="wish-count" id="wishCount" aria-live="polite" aria-atomic="true">Открыто 0 из 6 пожеланий</p></div>
+     </section>
+
+     <div class="divider" aria-hidden="true"><span>✦</span></div>
+     <section class="chapter reveal" id="poetry" aria-labelledby="poetryTitle">
+      <div class="chapter-head">
+       <span class="chapter-index">Глава IV · Тёплые строки</span>
+       <h3 id="poetryTitle">Пусть счастье<br>остаётся рядом с Вами.</h3>
+      </div>
+      <div class="poem">
+       <p>Пусть каждый день приносит вдохновенье,<br>Пусть будет дом наполнен добротой.<br>Пусть радуют счастливые мгновенья,<br>А жизнь ведёт за новою мечтой.</p>
+       <p>Пусть будет время встретиться с друзьями,<br>Увидеть мир, замедлиться, любить.<br>Пусть счастье остаётся рядом с Вами,<br>И будет столько поводов творить!</p>
+      </div>
+      <div class="signature">
+       <p>С глубоким уважением,<br>теплом и благодарностью</p>
+       <div class="wax-seal" role="img" aria-label="С юбилеем! 60 лет. От всего сердца."><small aria-hidden="true">С ЮБИЛЕЕМ</small><b aria-hidden="true">60</b><small aria-hidden="true">ОТ ВСЕГО СЕРДЦА</small></div>
+       <p class="signature-date"><time datetime="2026-10-16">16 октября 2026 года</time></p>
+      </div>
+     </section>
+     <div class="paper-end reveal">
+      <p>И пусть новая глава<br>будет самой счастливой.</p>
+      <a class="primary" id="toFinale" href="#finale">Ещё одно пожелание <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+     </div>
+    </div>
+   </article>
+   <div class="roller bottom" aria-hidden="true"></div>
+  </div>
+ </div>
+ <section class="finale" id="finale" aria-labelledby="finaleTitle">
+  <div class="finale-halo" aria-hidden="true"></div>
+  <div class="finale-inner reveal">
+   <p class="eyebrow">Впереди — столько прекрасного</p>
+   <div class="finale-number" aria-hidden="true">60</div>
+   <h2 id="finaleTitle" tabindex="-1">С юбилеем!<em>Марина Анатольевна</em></h2>
+   <p class="finale-message">Пусть свет, который Вы дарите людям,<br><strong>возвращается к Вам любовью.</strong></p>
+   <svg class="flourish" aria-hidden="true"><use href="#flourish"/></svg>
+   <p class="finale-bottom">Это не итог. Это прекрасное начало новой главы.</p>
+   <div class="finale-actions">
+    <button class="primary" id="celebrateButton" type="button"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Пусть всё сбудется!</button>
+    <button class="secondary" id="replayButton" type="button"><svg class="icon" aria-hidden="true"><use href="#i-replay"/></svg>Смотреть сначала</button>
+   </div>
+  </div>
+ </section>
+ <footer class="footer-note">Марине Анатольевне Ваничкиной · 16 октября 2026</footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<noscript><style>.intro-note::after{content:" Поздравление — ниже на странице."}.wish-front{display:none}.wish-back{opacity:1;transform:none;position:relative}.wish{pointer-events:none}.utility,#openScroll,.wishes-note,.wishes-bottom,.finale-actions{display:none}</style></noscript>
+<script>
+(() => {
+  'use strict';
+  const $ = (s, root = document) => root.querySelector(s);
+  const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
+  const body = document.body;
+  const intro = $('#intro');
+  const main = $('#greeting');
+  const paper = $('#paper');
+  const paperContent = $('#paperContent');
+  const nav = $('#chapterNav');
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const setting = {
+    get(key) { try { return localStorage.getItem('marina60.' + key); } catch (_) { return null; } },
+    set(key, value) { try { localStorage.setItem('marina60.' + key, String(value)); } catch (_) {} }
+  };
+  const savedMotion = setting.get('calm');
+  const state = {
+    open: false, busy: false, transition: 0,
+    calm: savedMotion === null ? motionQuery.matches : savedMotion === '1',
+    finaleSeen: false, toastTimer: 0
+  };
+  body.classList.add('enhanced');
+  main.hidden = true;
+  try { history.scrollRestoration = 'manual'; } catch (_) {}
+  if (!location.hash) window.scrollTo(0, 0);
+
+  function say(text, duration = 3900) {
+    clearTimeout(state.toastTimer);
+    const toast = $('#toast');
+    toast.textContent = text;
+    toast.classList.add('show');
+    state.toastTimer = setTimeout(() => toast.classList.remove('show'), duration);
+  }
+
+  /* Hand-drawn light and celebratory petals. Limited to 30 fps and two canvases. */
+  const ambient = $('#ambient'), celebration = $('#celebration');
+  const ac = ambient.getContext('2d'), cc = celebration.getContext('2d');
+  let width = 1, height = 1, dpr = 1, dust = [], petals = [], frameId = 0, lastFrame = 0;
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const palette = ['#d9b77d', '#e8d0a0', '#f5e6c6', '#b68561', '#a86d7b'];
+
+  function fitCanvases() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+    [ambient, celebration].forEach(c => {
+      c.width = Math.round(width * dpr);
+      c.height = Math.round(height * dpr);
+      c.style.width = width + 'px';
+      c.style.height = height + 'px';
+      const ctx = c.getContext('2d');
+      if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    });
+    dust = Array.from({length: width < 600 ? 31 : 64}, () => ({
+      x: rand(0, width), y: rand(0, height), r: rand(.45, 1.55),
+      vx: rand(-.06, .08), vy: rand(.08, .28),
+      phase: rand(0, Math.PI * 2), glow: Math.random() > .89
+    }));
+    if (state.calm) drawDust(0);
+    if (state.busy && state.open) paper.style.height = paperContent.scrollHeight + 'px';
+    queueReadUpdate();
+  }
+
+  function drawDust(dt) {
+    if (!ac) return;
+    ac.clearRect(0, 0, width, height);
+    for (const p of dust) {
+      p.x += p.vx * dt; p.y -= p.vy * dt;
+      p.phase += .007 * dt;
+      if (p.y < -8) { p.y = height + 8; p.x = rand(0, width); }
+      if (p.x > width + 8) p.x = -8;
+      if (p.x < -8) p.x = width + 8;
+      ac.globalAlpha = .18 + .24 * (.5 + .5 * Math.sin(p.phase));
+      ac.fillStyle = '#e4c693';
+      if (p.glow) {
+        const g = ac.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 5);
+        g.addColorStop(0, 'rgba(238,213,166,.7)');
+        g.addColorStop(1, 'rgba(238,213,166,0)');
+        ac.fillStyle = g;
+        ac.beginPath(); ac.arc(p.x, p.y, p.r * 5, 0, Math.PI * 2); ac.fill();
+      }
+      ac.fillStyle = '#e5ca9b';
+      ac.beginPath(); ac.arc(p.x, p.y, p.r, 0, Math.PI * 2); ac.fill();
+    }
+    ac.globalAlpha = 1;
+  }
+
+  function drawPetals(dt) {
+    if (!cc) return;
+    cc.clearRect(0, 0, width, height);
+    petals = petals.filter(p => p.age < p.life && p.y < height + 35);
+    for (const p of petals) {
+      p.age += dt; p.x += p.vx * dt; p.y += p.vy * dt;
+      p.vx *= Math.pow(.992, dt); p.vy += .065 * dt; p.angle += p.spin * dt;
+      const fade = Math.min(1, p.age / 7) * Math.min(1, (p.life - p.age) / 35);
+      cc.save(); cc.translate(p.x, p.y); cc.rotate(p.angle);
+      cc.globalAlpha = Math.max(0, fade * .83); cc.fillStyle = p.color;
+      if (p.star) {
+        cc.beginPath();
+        cc.moveTo(0, -p.size);
+        cc.quadraticCurveTo(p.size * .22, -p.size * .22, p.size, 0);
+        cc.quadraticCurveTo(p.size * .22, p.size * .22, 0, p.size);
+        cc.quadraticCurveTo(-p.size * .22, p.size * .22, -p.size, 0);
+        cc.quadraticCurveTo(-p.size * .22, -p.size * .22, 0, -p.size);
+        cc.fill();
+      } else {
+        cc.scale(Math.max(.15, Math.abs(Math.cos(p.age * .037))), 1);
+        cc.beginPath(); cc.ellipse(0, 0, p.size * .45, p.size, 0, 0, Math.PI * 2); cc.fill();
+      }
+      cc.restore();
+    }
+  }
+
+  function tick(time) {
+    frameId = 0;
+    if (state.calm || document.hidden) return;
+    const elapsed = time - lastFrame;
+    if (elapsed >= 31) {
+      const dt = Math.min(elapsed / 16.67, 3.2);
+      lastFrame = time;
+      drawDust(dt); drawPetals(dt);
+    }
+    frameId = requestAnimationFrame(tick);
+  }
+  function startVisuals() {
+    if (!frameId && !state.calm && !document.hidden) {
+      lastFrame = performance.now();
+      frameId = requestAnimationFrame(tick);
+    }
+  }
+  function stopVisuals() {
+    if (frameId) cancelAnimationFrame(frameId);
+    frameId = 0;
+  }
+  function burst(x = width * .5, y = height * .46, count = 95, wide = true) {
+    if (state.calm || document.hidden || !cc) return;
+    const n = Math.min(count, Math.max(0, 170 - petals.length));
+    for (let i = 0; i < n; i++) {
+      petals.push({
+        x: x + rand(-12, 12), y: y + rand(-8, 8),
+        vx: rand(wide ? -7 : -3.5, wide ? 7 : 3.5),
+        vy: rand(wide ? -8.5 : -5, -1.7),
+        size: rand(2.2, wide ? 5 : 3.5), angle: rand(0, Math.PI * 2),
+        spin: rand(-.09, .09), age: 0, life: rand(90, 170),
+        color: palette[Math.floor(rand(0, palette.length))], star: Math.random() > .7
+      });
+    }
+    startVisuals();
+  }
+
+  function setCalm(value, persist = false) {
+    state.calm = value;
+    body.classList.toggle('calm', value);
+    body.classList.toggle('motion-enabled', !value);
+    const button = $('#motionButton');
+    button.setAttribute('aria-pressed', String(value));
+    const label = value ? 'Возобновить анимацию' : 'Приостановить анимацию';
+    button.setAttribute('aria-label', label); button.title = label;
+    if (persist) setting.set('calm', value ? '1' : '0');
+    if (value) {
+      stopVisuals(); petals = [];
+      if (cc) cc.clearRect(0, 0, width, height);
+      $$('.reveal').forEach(el => el.classList.add('visible'));
+      if (state.open) paper.style.height = 'auto';
+      drawDust(0);
+    } else startVisuals();
+  }
+  $('#motionButton').addEventListener('click', () => {
+    setCalm(!state.calm, true);
+    say(state.calm ? 'Анимация приостановлена. Можно спокойно читать.' : 'Немного праздничного волшебства — снова с Вами.', 2600);
+  });
+  const motionChange = event => {
+    if (setting.get('calm') === null) setCalm(event.matches);
+  };
+  if (motionQuery.addEventListener) motionQuery.addEventListener('change', motionChange);
+  else if (motionQuery.addListener) motionQuery.addListener(motionChange);
+
+  /* Optional original instrumental score. No recordings or network requests. */
+  class KeepsakeMusic {
+    constructor() {
+      this.ctx = null;
+      this.master = null;
+      this.input = null;
+      this.running = false;
+      this.scheduler = 0;
+      this.suspendTimer = 0;
+      this.voices = new Set();
+      this.volume = Math.min(100, Math.max(0, Number(setting.get('volume') || 38)));
+      this.score = [];
+      this.index = 0;
+      this.epoch = 0;
+      this.loopDuration = 0;
+      this.makeScore();
+    }
+    makeScore() {
+      const beat = .94;
+      const chords = [
+        [50,57,62,66],[49,57,61,64],[47,54,59,62],[43,50,55,59],
+        [45,52,57,61],[42,49,54,57],[43,50,55,59],[45,52,57,61],
+        [50,57,62,66],[49,57,61,64],[47,54,59,62],[43,50,55,59],
+        [45,52,57,61],[42,49,54,57],[43,50,55,59],[50,57,62,66]
+      ];
+      const melody = [
+        [66,69,74],[73,71,69],[66,71,74],[74,71,67],
+        [69,73,76],[73,69,66],[67,71,74],[73,71,69],
+        [74,78,76],[73,76,73],[74,71,66],[71,67,62],
+        [69,73,76],[78,76,73],[74,71,67],[69,73,74]
+      ];
+      const pattern = [0,1,2,3,2,1];
+      chords.forEach((chord, bar) => {
+        const base = bar * 3 * beat;
+        this.score.push({t:base,n:chord[0]-12,d:3.2,v:.24});
+        pattern.forEach((note, i) => this.score.push({t:base+i*.5*beat,n:chord[note],d:1.8,v:i===0?.34:.27}));
+        melody[bar].forEach((note, i) => this.score.push({t:base+i*beat,n:note,d:2.35,v:i===0?.55:.46}));
+      });
+      this.score.sort((a,b) => a.t - b.t);
+      this.loopDuration = chords.length * 3 * beat;
+    }
+    create() {
+      const Audio = window.AudioContext || window.webkitAudioContext;
+      if (!Audio) throw new Error('Web Audio is unavailable');
+      this.ctx = new Audio({latencyHint:'playback'});
+      const ctx = this.ctx;
+      this.input = ctx.createGain();
+      this.master = ctx.createGain(); this.master.gain.value = 0;
+      const limiter = ctx.createDynamicsCompressor();
+      limiter.threshold.value = -16; limiter.knee.value = 18;
+      limiter.ratio.value = 3; limiter.attack.value = .008; limiter.release.value = .28;
+      this.input.connect(this.master);
+      const reverb = ctx.createConvolver();
+      const length = Math.floor(ctx.sampleRate * 2.25);
+      const impulse = ctx.createBuffer(2, length, ctx.sampleRate);
+      let seed = 60416;
+      for (let channel = 0; channel < 2; channel++) {
+        const data = impulse.getChannelData(channel);
+        for (let i = 0; i < length; i++) {
+          seed = (Math.imul(1664525, seed) + 1013904223) | 0;
+          const noise = (seed >>> 0) / 4294967295 * 2 - 1;
+          data[i] = noise * Math.pow(1 - i / length, 3.6) * .42;
+        }
+      }
+      reverb.buffer = impulse;
+      const wet = ctx.createGain(); wet.gain.value = .22;
+      this.input.connect(reverb); reverb.connect(wet); wet.connect(this.master);
+      this.master.connect(limiter); limiter.connect(ctx.destination);
+    }
+    targetVolume() { return Math.pow(this.volume / 100, 1.35) * .62; }
+    setVolume(value) {
+      this.volume = Math.min(100, Math.max(0, value));
+      setting.set('volume', this.volume);
+      if (this.ctx && this.master && this.running)
+        this.master.gain.setTargetAtTime(this.targetVolume(), this.ctx.currentTime, .12);
+    }
+    tone(midi, time, duration, velocity) {
+      const ctx = this.ctx;
+      if (!ctx || !this.input) return;
+      const freq = 440 * Math.pow(2, (midi - 69) / 12);
+      const partials = [
+        {ratio:1,amp:.56,decay:1},
+        {ratio:2.002,amp:.18,decay:.57},
+        {ratio:3.004,amp:.063,decay:.32}
+      ];
+      partials.forEach(part => {
+        const oscillator = ctx.createOscillator();
+        const envelope = ctx.createGain();
+        oscillator.type = 'sine';
+        oscillator.frequency.value = freq * part.ratio;
+        const span = duration * part.decay;
+        envelope.gain.setValueAtTime(.00001, time);
+        envelope.gain.exponentialRampToValueAtTime(Math.max(.00002, velocity*part.amp), time+.009);
+        envelope.gain.exponentialRampToValueAtTime(.0001, time+span);
+        oscillator.connect(envelope); envelope.connect(this.input);
+        this.voices.add(oscillator);
+        oscillator.onended = () => {
+          this.voices.delete(oscillator);
+          oscillator.disconnect(); envelope.disconnect();
+        };
+        oscillator.start(time); oscillator.stop(time+span+.05);
+      });
+    }
+    schedule() {
+      if (!this.running || !this.ctx || this.ctx.state !== 'running') return;
+      const horizon = this.ctx.currentTime + .18;
+      let guard = 0;
+      while (guard++ < 48) {
+        const event = this.score[this.index];
+        const due = this.epoch + event.t;
+        if (due > horizon) break;
+        if (due >= this.ctx.currentTime - .015)
+          this.tone(event.n, Math.max(due, this.ctx.currentTime), event.d, event.v);
+        this.index++;
+        if (this.index >= this.score.length) {
+          this.index = 0; this.epoch += this.loopDuration;
+        }
+      }
+    }
+    beginScheduler() {
+      clearInterval(this.scheduler);
+      this.schedule();
+      this.scheduler = setInterval(() => this.schedule(), 55);
+    }
+    async play() {
+      clearTimeout(this.suspendTimer);
+      if (!this.ctx) this.create();
+      await this.ctx.resume();
+      if (this.ctx.state !== 'running') throw new Error('Audio did not start');
+      this.running = true;
+      this.index = 0;
+      this.epoch = this.ctx.currentTime + .08;
+      this.master.gain.cancelScheduledValues(this.ctx.currentTime);
+      this.master.gain.setValueAtTime(0, this.ctx.currentTime);
+      this.master.gain.setTargetAtTime(this.targetVolume(), this.ctx.currentTime, .45);
+      this.beginScheduler();
+    }
+    stop() {
+      this.running = false;
+      clearInterval(this.scheduler);
+      if (!this.ctx) return;
+      const t = this.ctx.currentTime;
+      this.master.gain.cancelScheduledValues(t);
+      this.master.gain.setTargetAtTime(.00001, t, .12);
+      this.voices.forEach(voice => { try { voice.stop(t+.4); } catch (_) {} });
+      clearTimeout(this.suspendTimer);
+      this.suspendTimer = setTimeout(() => {
+        if (!this.running && this.ctx.state === 'running') this.ctx.suspend().catch(() => {});
+      }, 440);
+    }
+    chime() {
+      if (!this.running || !this.ctx || this.ctx.state !== 'running') return;
+      [74,78,81,86].forEach((n,i) => this.tone(n, this.ctx.currentTime+.02+i*.19, 2.7, .23));
+    }
+    async visibility() {
+      if (!this.running || !this.ctx) return;
+      if (document.hidden) {
+        clearInterval(this.scheduler);
+        await this.ctx.suspend().catch(() => {});
+      } else {
+        await this.ctx.resume().catch(() => {});
+        if (this.ctx.state === 'running') this.beginScheduler();
+      }
+    }
+  }
+  const music = new KeepsakeMusic();
+  const musicButton = $('#musicButton');
+  $('#volume').value = String(music.volume);
+  function musicUI() {
+    musicButton.setAttribute('aria-pressed', String(music.running));
+    const label = music.running ? 'Выключить музыку' : 'Включить музыку';
+    musicButton.setAttribute('aria-label', label);
+    musicButton.title = label;
+    $('#musicLabel').textContent = music.running ? 'Звучит' : 'Музыка';
+    $('.utility').classList.toggle('music-on', music.running);
+  }
+  musicButton.addEventListener('click', async () => {
+    if (musicButton.disabled) return;
+    musicButton.disabled = true;
+    try {
+      if (music.running) music.stop();
+      else await music.play();
+      musicUI();
+    } catch (_) {
+      music.stop(); musicUI();
+      say('Музыка недоступна в этом браузере. Поздравление можно читать без звука.');
+    } finally { musicButton.disabled = false; }
+  });
+  $('#volume').addEventListener('input', event => music.setVolume(Number(event.target.value)));
+
+  /* Progressive enhancement: without JavaScript the full letter remains readable. */
+  const revealElements = $$('.reveal');
+  let observer = null;
+  if ('IntersectionObserver' in window) {
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.055,rootMargin:'0px 0px -28px 0px'});
+    revealElements.forEach(el => observer.observe(el));
+  } else revealElements.forEach(el => el.classList.add('visible'));
+
+  const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const afterFrame = () => new Promise(resolve => requestAnimationFrame(resolve));
+  async function openGreeting() {
+    if (state.open || state.busy) return;
+    state.busy = true;
+    const transition = ++state.transition;
+    $('#openScroll').disabled = true;
+    intro.classList.add('leaving');
+    await wait(state.calm ? 0 : 550);
+    if (transition !== state.transition) return;
+    intro.hidden = true; main.hidden = false; nav.hidden = false;
+    state.open = true;
+    body.classList.add('reading');
+    window.scrollTo({top:0,behavior:'instant'});
+    if (!state.calm) {
+      paper.style.height = '0px';
+      await afterFrame(); await afterFrame();
+      if (transition !== state.transition) return;
+      paper.style.height = paperContent.scrollHeight + 'px';
+      await wait(1820);
+    }
+    if (transition !== state.transition) return;
+    paper.style.height = 'auto';
+    state.busy = false;
+    $('#dedication').classList.add('visible');
+    $('#greetingTitle').focus({preventScroll:true});
+    queueReadUpdate();
+  }
+  $('#openScroll').addEventListener('click', openGreeting);
+  $('#skipLink').addEventListener('click', async event => {
+    event.preventDefault();
+    if (!state.open) await openGreeting();
+    $('#greetingTitle').focus({preventScroll:true});
+    $('#dedication').scrollIntoView({behavior:state.calm?'instant':'smooth',block:'start'});
+  });
+  $('#replayButton').addEventListener('click', () => {
+    ++state.transition;
+    state.open = false; state.busy = false; state.finaleSeen = false;
+    main.hidden = true; nav.hidden = true; intro.hidden = false;
+    intro.classList.remove('leaving'); body.classList.remove('reading','at-finale');
+    $('#openScroll').disabled = false; paper.style.height = 'auto';
+    petals = []; if (cc) cc.clearRect(0,0,width,height);
+    $$('.wish').forEach(button => setWish(button, false));
+    updateWishCount();
+    revealElements.forEach(el => {
+      if (!state.calm && observer) { el.classList.remove('visible'); observer.observe(el); }
+    });
+    $('#progressFill').style.transform = 'scaleX(0)';
+    window.scrollTo({top:0,behavior:'instant'});
+    $('#openScroll').focus({preventScroll:true});
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (_) {}
+  });
+
+  /* Six seals: accessible controls, fixed card height, no layout jumps. */
+  function setWish(button, open) {
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', (open?'Свернуть':'Открыть') + ' пожелание ' + button.dataset.name);
+    $('.wish-front', button).setAttribute('aria-hidden', String(open));
+    $('.wish-back', button).setAttribute('aria-hidden', String(!open));
+    if (open) button.setAttribute('aria-describedby', button.getAttribute('aria-controls'));
+    else button.removeAttribute('aria-describedby');
+  }
+  function updateWishCount() {
+    const n = $$('.wish[aria-expanded="true"]').length;
+    $('#wishCount').textContent = n === 6 ? 'Все шесть пожеланий — от всего сердца' : `Открыто ${n} из 6 пожеланий`;
+    $('#allWishes').textContent = n === 6 ? 'Бережно закрыть печати' : 'Открыть все пожелания';
+  }
+  $$('.wish').forEach(button => button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    setWish(button, open); updateWishCount();
+    if (open) {
+      const r = button.getBoundingClientRect();
+      burst(r.left+r.width/2, r.top+r.height*.33, 19, false);
+    }
+  }));
+  $('#allWishes').addEventListener('click', () => {
+    const allOpen = $$('.wish[aria-expanded="true"]').length === 6;
+    $$('.wish').forEach(button => setWish(button, !allOpen));
+    updateWishCount();
+    if (!allOpen) music.chime();
+  });
+
+  /* Reading navigation and a finale that never interrupts the reader. */
+  const chapters = ['dedication','calling','gratitude','wishes','poetry','finale'].map(id => $('#'+id));
+  let readQueued = false;
+  function updateReading() {
+    readQueued = false;
+    if (!state.open) return;
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, window.scrollY / max));
+    $('#progressFill').style.transform = `scaleX(${progress})`;
+    let current = 0;
+    chapters.forEach((el, i) => { if (el.getBoundingClientRect().top < window.innerHeight*.43) current = i; });
+    $$('#chapterNav a').forEach((link, i) => {
+      if (i === current) link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+    const r = $('#finale').getBoundingClientRect();
+    const atFinale = r.top < window.innerHeight*.74 && r.bottom > window.innerHeight*.1;
+    body.classList.toggle('at-finale',atFinale);
+    if (!state.busy && !state.finaleSeen && r.top < window.innerHeight*.53 && r.bottom > 0) {
+      state.finaleSeen = true;
+      burst(width*.5, height*.45, width < 600 ? 76 : 112);
+      music.chime();
+    }
+  }
+  function queueReadUpdate() {
+    if (!readQueued) { readQueued = true; requestAnimationFrame(updateReading); }
+  }
+  window.addEventListener('scroll', queueReadUpdate, {passive:true});
+  $$('#chapterNav a, #toFinale').forEach(link => link.addEventListener('click', event => {
+    const target = $(link.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({behavior:state.calm?'instant':'smooth',block:'start'});
+    const heading = target.querySelector('h2,h3');
+    if (heading) {
+      heading.setAttribute('tabindex','-1');
+      heading.focus({preventScroll:true});
+    }
+  }));
+  const finalWishes = [
+    'Пусть всё хорошее обязательно сбудется.',
+    'Пусть каждый новый день дарит повод улыбнуться.',
+    'Пусть близкие будут рядом, а сердце — спокойно.',
+    'Пусть впереди будет ещё много счастливых страниц.',
+    'Пусть Ваше тепло возвращается к Вам сторицей.',
+    'С юбилеем, дорогая Марина Анатольевна!'
+  ];
+  let wishIndex = 0, lastCelebration = 0;
+  $('#celebrateButton').addEventListener('click', () => {
+    say(finalWishes[wishIndex++ % finalWishes.length]);
+    if (performance.now()-lastCelebration > 900) {
+      burst(width*.5, height*.45, width < 600 ? 83 : 125);
+      music.chime(); lastCelebration = performance.now();
+    }
+  });
+
+  const fullscreenButton = $('#fullscreenButton');
+  const root = document.documentElement;
+  if (!root.requestFullscreen && !root.webkitRequestFullscreen) fullscreenButton.hidden = true;
+  fullscreenButton.addEventListener('click', async () => {
+    try {
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) await exit.call(document);
+      } else {
+        const request = root.requestFullscreen || root.webkitRequestFullscreen;
+        if (request) await request.call(root);
+      }
+    } catch (_) { say('Полноэкранный режим недоступен. Поздравление открыто в обычном окне.'); }
+  });
+  function fullscreenUI() {
+    const active = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    root.classList.toggle('is-fullscreen', active);
+    fullscreenButton.setAttribute('aria-pressed', String(active));
+    const label = active?'Выйти из полноэкранного режима':'Открыть на весь экран';
+    fullscreenButton.setAttribute('aria-label',label); fullscreenButton.title = label;
+  }
+  document.addEventListener('fullscreenchange', fullscreenUI);
+  document.addEventListener('webkitfullscreenchange', fullscreenUI);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopVisuals(); else startVisuals();
+    music.visibility().catch(() => {});
+  });
+  window.addEventListener('pagehide', () => { stopVisuals(); music.stop(); });
+  window.addEventListener('pageshow', () => { startVisuals(); musicUI(); });
+  let resizeTimer = 0;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer); resizeTimer = setTimeout(fitCanvases, 100);
+  }, {passive:true});
+  fitCanvases();
+  setCalm(state.calm);
+  startVisuals();
+  if (location.hash && chapters.some(el => '#'+el.id === location.hash)) {
+    const initialHash = location.hash;
+    openGreeting().then(() => {
+      const target = $(initialHash);
+      if (target) target.scrollIntoView({behavior:'instant',block:'start'});
+    });
+  }
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
